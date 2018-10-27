@@ -66,7 +66,7 @@ func start() {
 			}
 
 			started = true
-			mainLog("Build: %s \n", loopIndex)
+			mainLog("Build: %d\n", loopIndex)
 			mainLog(strings.Repeat("-", 20))
 		}
 	}()

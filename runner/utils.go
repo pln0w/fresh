@@ -8,10 +8,7 @@ import (
 
 func initFolders() {
 	path := tmpPath()
-	err := os.Mkdir(path, 0755)
-	if err != nil {
-		runnerLog(err.Error())
-	}
+	os.Mkdir(path, 0755)
 }
 
 func isTmpDir(path string) bool {

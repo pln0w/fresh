@@ -84,7 +84,6 @@ func loadRunnerConfigSettings() {
 		return
 	}
 
-	logger.Printf("Loading settings from %s", configPath())
 	sections, err := config.ParseFile(configPath(), mainSettingsSection)
 	if err != nil {
 		return
