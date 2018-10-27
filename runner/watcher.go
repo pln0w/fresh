@@ -19,7 +19,6 @@ func watchFolder(path string) {
 			select {
 			case ev := <-watcher.Event:
 				if isWatchedFile(ev.Name) {
-					watcherLog("sending event %s", ev)
 					startChannel <- ev.String()
 				}
 			case err := <-watcher.Error:
@@ -28,7 +27,6 @@ func watchFolder(path string) {
 		}
 	}()
 
-	watcherLog("Watching %s", path)
 	err = watcher.Watch(path)
 
 	if err != nil {
@@ -45,7 +43,6 @@ func watch() {
 			}
 
 			if isIgnoredFolder(path) {
-				watcherLog("Ignoring %s", path)
 				return filepath.SkipDir
 			}
 

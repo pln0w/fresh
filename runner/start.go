@@ -43,10 +43,7 @@ func start() {
 
 			flushEvents()
 
-			err := removeBuildErrorsLog()
-			if err != nil {
-				mainLog(err.Error())
-			}
+			removeBuildErrorsLog()
 
 			buildFailed := false
 			if shouldRebuild(eventName) {
